@@ -34,8 +34,7 @@ def main():
     room_list.append(room)
     # sala3
     room = Room('Esta debe ser la sala de interrogatorios para los intrusos... No me da buena espina, salgamos de aqui.'
-                ' Hay una puerta en el este '
-                , None, 0, 8, None)
+                ' Hay una puerta en el este ', None, 0, 8, None)
 
     room_list.append(room)
     # sala4
@@ -66,38 +65,46 @@ def main():
 
     current_room = room_list[0]
 
-    next_room = None
+    #instrucciones
+    print('\n')
+    print('Para moverte por el juego solo se aceptarán las palabras norte, sur, este, oeste y las letras n, s , e, o. '
+          'Si desea salir del juego escribe salir')
+
     while not done:
-        print('\n')
+        print()
         print(current_room.descripcion)
         direccion = input('¿Hacia donde vas? ')
 
-        if direccion.lower() == 'n' or 'norte':
-            next_room = room_list[current_room.norte]
-            if next_room == None:
-                print('No puedes ir hacia esa dirección')
-            else:
-                current_room = next_room
-        elif direccion.lower() == 's' or 'sur':
-            next_room = room_list[current_room.sur]
-            if next_room == None:
-                print('No puedes ir hacia esa dirección')
-            else:
-                current_room = next_room
-        elif direccion.lower() == 'e' or 'este':
-            next_room = room_list[current_room.este]
-            if next_room == None:
-                print('No puedes ir hacia esa dirección')
-            else:
-                current_room = next_room
-        elif direccion.lower() == 'o' or 'oeste':
-            next_room = room_list[current_room.oeste]
-            if next_room == None:
-                print('No puedes ir hacia esa dirección')
-            else:
-                current_room = next_room
+        if direccion == 'salir':
+            done = True
         else:
-            print('Lo siento, no entiendo lo que dices')
+            if direccion.lower() == 'n' or 'norte':
+                next_room = room_list[current_room.norte]
+                if next_room == None:
+                    print('No puedes ir hacia esa dirección')
+                else:
+                    current_room = next_room
+            elif direccion.lower() == 's' or 'sur':
+                next_room = room_list[current_room.sur]
+                if next_room == None:
+                    print('No puedes ir hacia esa dirección')
+                else:
+                    current_room = next_room
+            elif direccion.lower() == 'e' or 'este':
+                next_room = room_list[current_room.este]
+                if next_room == None:
+                    print('No puedes ir hacia esa dirección')
+                else:
+                    current_room = next_room
+            elif direccion.lower() == 'o' or 'oeste':
+                next_room = room_list[current_room.oeste]
+                if next_room == None:
+                    print('No puedes ir hacia esa dirección')
+                else:
+                    current_room = next_room
+            else:
+                print('Lo siento, no entiendo lo que dices')
+
         if current_room == room_list[7] and direccion == 's' or 'sur':
             print('¡Felicidades!, conseguiste escapar del castillo y prodas advertir al rey de los planes malvados del '
                   'principe')
