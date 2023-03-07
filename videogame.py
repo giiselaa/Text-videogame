@@ -65,7 +65,7 @@ def main():
 
     current_room = room_list[0]
 
-    #instrucciones
+    # instrucciones
     print('\n')
     print('Para moverte por el juego solo se aceptarán las palabras norte, sur, este, oeste y las letras n, s , e, o. '
           'Si desea salir del juego escribe salir')
@@ -75,7 +75,7 @@ def main():
         print(current_room.descripcion)
         direccion = input('¿Hacia donde vas? ')
 
-        if direccion == 'salir':
+        if direccion.lower() == 'salir':
             done = True
         else:
             if direccion.lower() == 'n' or 'norte':
