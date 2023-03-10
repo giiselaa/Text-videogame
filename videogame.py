@@ -28,7 +28,7 @@ def main():
     # sala2
     room = Room('Parece que has llegado a una sala utilizada como almacen pero...¡Espera! Eso no son conservas'
                 'normales, por mis grandes conocimientos puedo asegurar que son botes de veneno. Debes salir pronto'
-                'para que no puedan utilizarlos en contra del rey. Hay dos puertas, una al oeste y otra al sur', None,
+                'para que no puedan utilizarlos en contra del rey. Hay una puerta al oeste', None,
                 None, 0, 9)
 
     room_list.append(room)
@@ -55,11 +55,24 @@ def main():
     # sala7
     room = Room('Wow, ¡que sala tan hermosa! Debe ser la galeria de arte personal del principe, lo que no entiendo es'
                 '¿Por qué guardar tales obras de arte tan profundamente?. Bueno, tampoco es nuestro problema. Hay una'
-                ' puerta al norte y otra al sur', None, None, 6, None)
+                ' puerta al norte y otra al sur', 2, 10, 6, None)
 
     room_list.append(room)
+
+    # sala8
+    room = Room('Vaya... había rumores de que en estos pasadizos había una sala para torturas pero nunca pensé que '
+                'fuera cierto. Mejor salgamos antes de que decidan usarla en nuestra contra. Hay dos puertas, una'
+                ' al oeste y por la que entraste', None, 1, None, 3)
+    room_list.append(room)
+
     # sala9
     room = Room('¡Oh no, un guardia! debes dar la vuelta o te volveran a atrapar', None, None, 2, None)
+
+    room_list.append(room)
+
+    # final
+
+    room = Room('¡Felicidades!, conseguiste escapar del castillo', None, None, None, None)
 
     room_list.append(room)
 
@@ -76,36 +89,36 @@ def main():
         direccion = input('¿Hacia donde vas? ')
 
         if direccion.lower() == 'n' or direccion.lower() == 'norte':
-            next_room = room_list[current_room.norte]
-            if next_room is None:
-                print('No puedes ir hacia esa dirección')
+            if room_list[current_room.norte] is None:
+                print('La dirección no es válida')
+                current_room = room_list[current_room.sur]
             else:
-                current_room = next_room
+                current_room = room_list[current_room.norte]
         elif direccion.lower() == 's' or direccion.lower() == 'sur':
-            next_room = room_list[current_room.sur]
-            if next_room is None:
-                print('No puedes ir hacia esa dirección')
+            if room_list[current_room.sur] is None:
+                 print('La dirección no es válida')
+                 current_room = room_list[current_room.norte]
             else:
-                current_room = next_room
+                current_room = room_list[current_room.sur]
         elif direccion.lower() == 'e' or direccion.lower() == 'este':
-            next_room = room_list[current_room.este]
-            if next_room is None:
-                print('No puedes ir hacia esa dirección')
+            if room_list[current_room.este] is None:
+                print('La dirección no es válida')
+                current_room = room_list[current_room.oeste]
             else:
-                current_room = next_room
+                current_room = room_list[current_room.este]
         elif direccion.lower() == 'o' or direccion.lower() == 'oeste':
-            next_room = room_list[current_room.oeste]
-            if next_room is None:
-                print('No puedes ir hacia esa dirección')
+            if room_list[current_room.oeste] is None:
+                print('La dirección no es válida')
+                current_room = room_list[current_room.este]
             else:
-                current_room = next_room
+                current_room = room_list[current_room.oeste]
         elif direccion.lower() == 'salir':
             done = True
         else:
             print('Lo siento, no entiendo lo que dices')
 
-        if current_room == room_list[7] and direccion == 's' or direccion.lower() == 'sur':
-            print('¡Felicidades!, conseguiste escapar del castillo')
+        if current_room == room_list[10]:
+            print(current_room.descripcion)
             done = True
 
 
