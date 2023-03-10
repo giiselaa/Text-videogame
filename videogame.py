@@ -88,34 +88,17 @@ def main():
         print(current_room.descripcion)
         direccion = input('¿Hacia donde vas? ')
 
-        if direccion.lower() == 'n' or direccion.lower() == 'norte':
-            if room_list[current_room.norte] is None:
-                print('La dirección no es válida')
-                current_room = room_list[current_room.sur]
-            else:
-                current_room = room_list[current_room.norte]
-        elif direccion.lower() == 's' or direccion.lower() == 'sur':
-            if room_list[current_room.sur] is None:
-                print('La dirección no es válida')
-                current_room = room_list[current_room.norte]
-            else:
-                current_room = room_list[current_room.sur]
-        elif direccion.lower() == 'e' or direccion.lower() == 'este':
-            if room_list[current_room.este] is None:
-                print('La dirección no es válida')
-                current_room = room_list[current_room.oeste]
-            else:
-                current_room = room_list[current_room.este]
-        elif direccion.lower() == 'o' or direccion.lower() == 'oeste':
-            if room_list[current_room.oeste] is None:
-                print('La dirección no es válida')
-                current_room = room_list[current_room.este]
-            else:
-                current_room = room_list[current_room.oeste]
-        elif direccion.lower() == 'salir':
-            done = True
+        if (direccion.lower() == 'n' or direccion.lower() == 'norte') and current_room.norte is not None:
+            current_room = room_list[current_room.norte]
+        elif (direccion.lower() == 's' or direccion.lower() == 'sur') and current_room.sur is not None:
+            current_room = room_list[current_room.sur]
+        elif (direccion.lower() == 'e' or direccion.lower() == 'este') and current_room.este is not None:
+            current_room = room_list[current_room.este]
+        elif (direccion.lower() == 'o' or direccion.lower() == 'oeste') and current_room.oeste is not None:
+            current_room = room_list[current_room.oeste]
         else:
-            print('Lo siento, no entiendo lo que dices')
+            print()
+            print('La dirección no es válida')
 
         if current_room == room_list[10]:
             print(current_room.descripcion)
