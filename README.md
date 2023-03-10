@@ -1,4 +1,4 @@
 # Text-videogame
 
-Este será un videojuego de texto, ambientado en los pasadizos secretos de un castillo.
-El objetivo será escapar
+Este archivo es un videojuego de texto, ambientado en los pasadizos secretos de un castillo.
+El objetivo es escapar.
