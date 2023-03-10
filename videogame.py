@@ -20,21 +20,21 @@ def main():
 
     room_list.append(room)
     # sala1
-    room = Room('Has llegado a una sala de reuniones secretas. Encuentras unos socumentos'
-                'sobre la mesa y descubres que el principe esta planeando un golpe para ser el rey. ¡No puedes'
-                'permitir que eso pase! Hay una puerta al norte', 8, None, None, 0)
+    room = Room('Has llegado a una sala de reuniones secretas. Encuentras unos documentos '
+                'sobre la mesa y descubres que el principe esta planeando un golpe para ser el rey. ¡No puedes '
+                'permitir que eso pase! Hay una puerta al norte y otra al oeste', 8, None, None, 0)
 
     room_list.append(room)
     # sala2
-    room = Room('Parece que has llegado a una sala utilizada como almacen pero...¡Espera! Eso no son conservas'
-                'normales, por mis grandes conocimientos puedo asegurar que son botes de veneno. Debes salir pronto'
+    room = Room('Parece que has llegado a una sala utilizada como almacen pero...¡Espera! Eso no son conservas '
+                'normales, por mis grandes conocimientos puedo asegurar que son botes de veneno. Debes salir pronto '
                 'para que no puedan utilizarlos en contra del rey. Hay una puerta al oeste', None,
                 None, 0, 9)
 
     room_list.append(room)
     # sala3
     room = Room('Esta debe ser la sala de interrogatorios para los intrusos... No me da buena espina, salgamos de aqui.'
-                ' Hay una puerta en el este ', None, 0, 8, None)
+                ' Hay una puerta en el este y otra al sur ', None, 0, 8, None)
 
     room_list.append(room)
     # sala4
@@ -62,7 +62,7 @@ def main():
     # sala8
     room = Room('Vaya... había rumores de que en estos pasadizos había una sala para torturas pero nunca pensé que '
                 'fuera cierto. Mejor salgamos antes de que decidan usarla en nuestra contra. Hay dos puertas, una'
-                ' al oeste y por la que entraste', None, 1, None, 3)
+                ' al oeste y otra al sur', None, 1, None, 3)
     room_list.append(room)
 
     # sala9
