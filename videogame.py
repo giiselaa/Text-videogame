@@ -28,7 +28,7 @@ def main():
     # sala2
     room = Room('Parece que has llegado a una sala utilizada como almacen pero...¡Espera! Eso no son conservas '
                 'normales, por mis grandes conocimientos puedo asegurar que son botes de veneno. Debes salir pronto '
-                'para que no puedan utilizarlos en contra del rey. Hay una puerta al oeste', None,
+                'para que no puedan utilizarlos en contra del rey. Hay una puerta al este y otra al oeste', None,
                 None, 0, 9)
 
     room_list.append(room)
@@ -55,7 +55,7 @@ def main():
     # sala7
     room = Room('Wow, ¡que sala tan hermosa! Debe ser la galeria de arte personal del principe, lo que no entiendo es'
                 '¿Por qué guardar tales obras de arte tan profundamente?. Bueno, tampoco es nuestro problema. Hay una'
-                ' puerta al norte y otra al sur', 2, 10, 6, None)
+                ' puerta al norte y otra al sur', None, 10, 6, None)
 
     room_list.append(room)
 
