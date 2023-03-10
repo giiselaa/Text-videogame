@@ -96,8 +96,8 @@ def main():
                 current_room = room_list[current_room.norte]
         elif direccion.lower() == 's' or direccion.lower() == 'sur':
             if room_list[current_room.sur] is None:
-                 print('La dirección no es válida')
-                 current_room = room_list[current_room.norte]
+                print('La dirección no es válida')
+                current_room = room_list[current_room.norte]
             else:
                 current_room = room_list[current_room.sur]
         elif direccion.lower() == 'e' or direccion.lower() == 'este':
