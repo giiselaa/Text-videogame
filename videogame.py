@@ -75,25 +75,25 @@ def main():
         print(current_room.descripcion)
         direccion = input('¿Hacia donde vas? ')
 
-        if direccion.lower() == 'n' or 'norte':
+        if direccion.lower() == 'n' or direccion.lower() == 'norte':
             next_room = room_list[current_room.norte]
             if next_room is None:
                 print('No puedes ir hacia esa dirección')
             else:
                 current_room = next_room
-        elif direccion.lower() == 's' or 'sur':
+        elif direccion.lower() == 's' or direccion.lower() == 'sur':
             next_room = room_list[current_room.sur]
             if next_room is None:
                 print('No puedes ir hacia esa dirección')
             else:
                 current_room = next_room
-        elif direccion.lower() == 'e' or 'este':
+        elif direccion.lower() == 'e' or direccion.lower() == 'este':
             next_room = room_list[current_room.este]
             if next_room is None:
                 print('No puedes ir hacia esa dirección')
             else:
                 current_room = next_room
-        elif direccion.lower() == 'o' or 'oeste':
+        elif direccion.lower() == 'o' or direccion.lower() == 'oeste':
             next_room = room_list[current_room.oeste]
             if next_room is None:
                 print('No puedes ir hacia esa dirección')
@@ -104,7 +104,7 @@ def main():
         else:
             print('Lo siento, no entiendo lo que dices')
 
-        if current_room == room_list[7] and direccion == 's' or 'sur':
+        if current_room == room_list[7] and direccion == 's' or direccion.lower() == 'sur':
             print('¡Felicidades!, conseguiste escapar del castillo')
             done = True
 
